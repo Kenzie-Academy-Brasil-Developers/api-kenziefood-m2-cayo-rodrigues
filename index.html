@@ -9,42 +9,45 @@
     <title>E-commerce</title>
 </head>
 <body>
-    <header id="header">
+    <header id="header" class="header">
 
         <!--logo kenziefood-->
-        <div id="Logo">
+        <div id="Logo" class="Logo">
         <img src="src/css/img/Logo.png">
         </div>
 
         <!--box da barra de pesquisa-->
-        <div id="searchbar">
+        <div id="searchbar" class="searchbar">
             <!--input / botão-->
-            <input type="text" placeholder="" id="search" name="search" class="searchbar__input">
+            <input type="text" placeholder="pesquisar por produto" id="search" name="search" class="searchbar__input">
             <button class="searchbar__button"></button>
         </div>
     </header>
 
     <main>
         <!--botões de filtro-->
-        <div class="filters">
+        <div id="filters" class="filters">
             <button class="filters__button filters__button--todos">todos</button>
-            <button class="filters__button filters__button--panificadora">panificadora</button>
-            <button class="filters__button filters__button--frutas">frutas</button>
-            <button class="filters__button filters__button--bebidas">bebidas</button>
+            <button class="filters__button filters__button--panificadora">
+                <img src="src/css/img/Icon_bread.png">panificadora</button>
+            <button class="filters__button filters__button--frutas">
+                <img src="src/css/img/Icon_fruits.png">frutas</button>
+            <button class="filters__button filters__button--bebidas">
+                <img src="src/css/img/Icon_glass of wine.png">bebidas</button>
         </div>
 
-        <!--vitrine-->
-        <section id="fullBox--showcase">
-            <ul></ul>
-        </section>
-
-        <!--carrinho-->
-        <div id="fullBox--shopKart">
-                <p id="shopKart__txt">carrinho</p>
-            <div id="shopKart">
+        <div id="fullBox--showcase" class="fullBox--showcase">
+          
+            <!--vitrine-->
+            <ul id="showcase"></ul>
+        
+            <!--carrinho-->
+            <div id="fullBox--shopKart" class="fullBox--shopKart">
+                    <p id="shopKart__txt" class="shopKart__txt">carrinho</p>
+                <div id="shopKart" class="shopKart">
+                </div>
             </div>
         </div>
-
     </main>
     <script src="src/script.js" type="module"></script>
 </body>
