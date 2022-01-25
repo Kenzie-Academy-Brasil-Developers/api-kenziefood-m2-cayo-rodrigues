@@ -4,7 +4,11 @@ import { ProductsRouter } from "./routes/ProductsRouter.js"
 // roda assim que a página carrega
 async function starter() {
     // pegar produtos da api
-    const allProducts = await ProductsRouter.get()
+    const products    = await ProductsRouter.get()
+    const ownProducts = await ProductsRouter.getOwnProducts()
+    const allProducts = [...products, ...ownProducts]
+
+    // armazenar produtos para evitar fazer muitas requisições
     localStorage.setItem('allProducts', JSON.stringify(allProducts))
 
     // listar produtos na vitrine
