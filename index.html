@@ -24,7 +24,7 @@
         </div>
     </header>
 
-    <section>
+    <main>
         <!--botões de filtro-->
         <div id="filters" class="filters">
             <button class="filters__button filters__button--todos">todos</button>
@@ -36,19 +36,19 @@
                 <img src="src/css/img/Icon_glass of wine.png">bebidas</button>
         </div>
 
-        <!--vitrine-->
         <div id="fullBox--showcase" class="fullBox--showcase">
+          
+            <!--vitrine-->
+            <ul id="showcase"></ul>
         
-
-        <!--carrinho-->
+            <!--carrinho-->
             <div id="fullBox--shopKart" class="fullBox--shopKart">
                     <p id="shopKart__txt" class="shopKart__txt">carrinho</p>
                 <div id="shopKart" class="shopKart">
                 </div>
             </div>
         </div>
-    </section>
-    <script src="models/classes.js"></script>
-    <script src="src/script.js"></script>
+    </main>
+    <script src="src/script.js" type="module"></script>
 </body>
 </html>
