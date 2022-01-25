@@ -13,6 +13,7 @@ class CreateCart {
     priceAmount(product) {
         const totalPrice = document.getElementById('fullBox--shopKart__priceTotal')
         totalPrice.innerText =+ product.preco
+        return totalPrice
     }
 
     createItem(product){
