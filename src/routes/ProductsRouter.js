@@ -13,10 +13,25 @@ class ProductsRouter {
     static
     async getOwnProducts(id='') {
         return await fetch(`${this.baseUrl}/my/product/${id}`, {
-            headers: { Authorization: `Token ${this.token}` }
+            headers: { 'Authorization': `Token ${this.token}` }
         })
         .then(res => res.json())
         .then(products => products)
+        .catch(error => error)
+    }
+
+    static
+    async postOwnProduct(data) {
+        return await fetch(`${this.baseUrl}/my/product`, {
+            headers: {
+                'Authorization': `Token ${this.token}`,
+                'Content-Type': 'application/json'
+            },
+            method: 'post',
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(newProduct => newProduct)
         .catch(error => error)
     }
 }
