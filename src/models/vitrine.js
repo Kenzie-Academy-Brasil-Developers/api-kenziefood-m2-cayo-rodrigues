@@ -1,11 +1,5 @@
-
-import { ProductsRouter } from "./routes/ProductsRouter"
-
-const products = await ProductsRouter.get()
-
-
 class CreateLayout {
-    constructor({products}){
+    constructor(products){
         this.products = products
     }
 
@@ -22,9 +16,9 @@ class CreateLayout {
             const category        = document.createElement('span')
             const price           = document.createElement('span')
             const addToCart       = document.createElement('button')
-            const list            = document.getElementsByTagName('ul')
+            const list            = document.querySelector('ul')
 
-            //setta conteudo 
+            //setta conteudo
             name.innerText        = currentProduct.nome
             image.src             = currentProduct.imagem
             description.innerText = currentProduct.descricao
@@ -48,4 +42,4 @@ class CreateLayout {
     }
 }
 
-export{CreateLayout}
+export { CreateLayout }
