@@ -10,3 +10,19 @@ async function starter() {
     createLayout.createEachProduct()
 }
 starter()
+
+// identificar click no produto e passar pro carrinho
+const showcase = document.querySelector('#fullBox--showcase')
+showcase.onclick = (event) => {
+    const target = event.target
+
+    if (target.tagName === 'BUTTON') {
+        const card          = target.closest('li')
+        const productId     = card.id
+        const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
+        const chosenProduct = allProducts.find(product => product.id == productId)
+
+        // nesse ponto, chamamos o carrinho
+        console.log(chosenProduct)
+    }
+}
