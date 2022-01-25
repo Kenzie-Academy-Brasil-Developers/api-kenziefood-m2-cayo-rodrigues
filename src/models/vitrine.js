@@ -28,6 +28,7 @@ class CreateLayout {
 
             //setta atributos
             itemBox.setAttribute('class','li')
+            itemBox.setAttribute('id', currentProduct.id)
             name.setAttribute('class','li__name')
             image.setAttribute('class','li__image')
             description.setAttribute('class','li__description')
