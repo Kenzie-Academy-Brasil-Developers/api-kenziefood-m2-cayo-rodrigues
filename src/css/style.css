@@ -45,7 +45,7 @@ section{}
 }
 
 /* botões do filtro */
-.filtersGeneral {
+.filters__button {
     text-align:center;
     display:block;
     border-radius: 30px;
@@ -60,23 +60,23 @@ section{}
     margin-top:20px;
 }
 
-.filtersGeneral:hover{
+.filters__button:hover{
     border:2px solid black;
 }
 
-.filtersGeneral--Todos{
+.filters__button--todos{
     background-color:#EEF6FF
 }
 
-.filtersGeneral--Panificadora{
+.filters__button--panificadora{
     background-color:#FFF7F4
 }
 
-.filtersGeneral--Frutas{
+.filters__button--frutas{
     background-color:#FFE4EA
 }
 
-.filtersGeneral--Bebidas{
+.filters__button--bebidas{
     background-color: #F3EEF5;
 }
 
@@ -86,7 +86,7 @@ section{}
 }
 
 /*carrinho*/
-#shopKartTxt{
+#shopKart__txt{
     height:40px;
     width:100%;
     background-color:#FF2253;
