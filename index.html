@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>E-commerce</title>
+</head>
+<body>
+    <header id="header">
+
+        <!--logo kenziefood-->
+        <div id="Logo">
+        <img src="src/css/img/Logo.png">
+        </div>
+
+        <!--box da barra de pesquisa-->
+        <div id="searchbar">
+            <!--input / botão-->
+            <input type="text" placeholder="" id="search" name="search" class="campoSearch">
+            <button class="searchItem" onclick="/*function()*/"></button>
+        </div>
+    </header>
+
+    <section>
+        <!--botões de filtro-->
+        <div id="filters" class="filtersContainer">
+            <button class="estiloGeralBotoes estiloGeralBotoes--Todos">todos</button>
+            <button class="estiloGeralBotoes estiloGeralBotoes--Panificadora">panificadora</button>
+            <button class="estiloGeralBotoes estiloGeralBotoes--Frutas">frutas</button>
+            <button class="estiloGeralBotoes estiloGeralBotoes--Bebidas">bebidas</button>
+        </div>
+
+        <!--vitrine-->
+        <div id="fullBox--vitrine">
+        </div>
+
+        <!--carrinho-->
+        <div id="fullBox--shopKart">
+                <p id="shopKartTxt">carrinho</p>
+            <div id="shopKart">
+            </div>
+        </div>
+        
+    </section>
+    <script src="models/classes.js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>
