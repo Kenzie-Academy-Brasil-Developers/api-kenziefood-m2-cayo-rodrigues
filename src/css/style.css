@@ -1,0 +1,108 @@
+body {
+    padding-left:20px;
+    padding-right:20px;
+    font-family: Poppins, sans-serif;
+}
+
+/*font-family: Poppins;
+font-size: 17px; */
+section{}
+
+/* header e barra pesquisa */
+#header{
+    height: 100px;
+    margin-top:10px;
+}
+
+.filters {
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.searchbar__button{
+    border-radius:50%;
+    width:50px;
+    height: 50px;
+    cursor:pointer;
+    margin-top:10px;
+    margin-left:-50px
+}
+
+.searchbar__input {
+    border-radius:30px;
+    width:100%;
+    height: 45px;
+    margin-top:10px;
+    background-color: #F8F9FA;
+}
+
+#searchbar{
+    margin-bottom:40px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+
+/* botões do filtro */
+.filters__button {
+    text-align:center;
+    display:block;
+    border-radius: 30px;
+    height:30px;
+    width:100px;
+    padding:0px 10px;
+    border:none;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    cursor:pointer;
+    color:black;
+    margin-top:20px;
+}
+
+.filters__button:hover{
+    border:2px solid black;
+}
+
+.filters__button--todos{
+    background-color:#EEF6FF
+}
+
+.filters__button--panificadora{
+    background-color:#FFF7F4
+}
+
+.filters__button--frutas{
+    background-color:#FFE4EA
+}
+
+.filters__button--bebidas{
+    background-color: #F3EEF5;
+}
+
+/*vitrine*/
+#fullBox--showcase{
+    height:300px;
+}
+
+/*carrinho*/
+#shopKart__txt{
+    height:40px;
+    width:100%;
+    background-color:#FF2253;
+    border-radius: 12px 15px 0px 0px;
+    padding:12px 20px;
+    color:white;
+}
+
+#shopKart{
+    height:300px;
+    width:100%;
+    background-color:#E9ECEF;
+}
+
+#fullBox--shopKart{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
