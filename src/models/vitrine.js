@@ -22,7 +22,7 @@ class CreateLayout {
             const category        = document.createElement('span')
             const price           = document.createElement('span')
             const addToCart       = document.createElement('button')
-            const list            = document.getElementById('ul')
+            const list            = document.getElementsByTagName('ul')
 
             //setta conteudo 
             name.innerText        = currentProduct.nome
@@ -47,3 +47,5 @@ class CreateLayout {
         }
     }
 }
+
+export{CreateLayout}
