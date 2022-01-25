@@ -53,6 +53,17 @@ class ProductsRouter {
         .then(updatedProduct => updatedProduct)
         .catch(error => error)
     }
+
+    // DELETAR PRODUTO QUE VOCÊ ADICIONOU (EXTRA)
+    static
+    async deleteOwnProduct(id) {
+        return await fetch(`${this.baseUrl}/my/product/${id}`, {
+            headers: { 'Authorization': `Token ${this.token}` },
+            method: 'delete'
+        })
+        .then(res => res.json())
+        .catch(error => error)
+    }
 }
 
 export { ProductsRouter }
