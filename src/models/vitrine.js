@@ -11,13 +11,13 @@ class CreateLayout {
             let currentProduct = this.products[index]
 
             //pega cada item
-            const itemBox         = document.createElement
-            const name            = document.createElement
-            const image           = document.createElement
-            const description     = document.createElement
-            const category        = document.createElement
-            const icon            = document.createElement
-            const price           = document.createElement
+            const itemBox         = document.createElement('li')
+            const name            = document.createElement('h2')
+            const image           = document.createElement('img')
+            const description     = document.createElement('p')
+            const category        = document.createElement('span')
+            const icon            = document.createElement('img')
+            const price           = document.createElement('span')
             const list            = document.getElementById
 
             //setta conteudo 
