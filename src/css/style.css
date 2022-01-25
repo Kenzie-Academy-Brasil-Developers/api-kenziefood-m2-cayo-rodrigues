@@ -14,13 +14,13 @@ section{}
     margin-top:10px;
 }
 
-.filtersContainer {
+.filters {
     display:flex;
     justify-content: space-around;
     align-items:center;
 }
 
-.searchItem{
+.searchbar__button{
     border-radius:50%;
     width:50px;
     height: 50px;
@@ -29,7 +29,7 @@ section{}
     margin-left:-50px
 }
 
-.campoSearch {
+.searchbar__input {
     border-radius:30px;
     width:100%;
     height: 45px;
@@ -45,7 +45,7 @@ section{}
 }
 
 /* botões do filtro */
-.estiloGeralBotoes {
+.filtersGeneral {
     text-align:center;
     display:block;
     border-radius: 30px;
@@ -60,28 +60,28 @@ section{}
     margin-top:20px;
 }
 
-.estiloGeralBotoes:hover{
+.filtersGeneral:hover{
     border:2px solid black;
 }
 
-.estiloGeralBotoes--Todos{
+.filtersGeneral--Todos{
     background-color:#EEF6FF
 }
 
-.estiloGeralBotoes--Panificadora{
+.filtersGeneral--Panificadora{
     background-color:#FFF7F4
 }
 
-.estiloGeralBotoes--Frutas{
+.filtersGeneral--Frutas{
     background-color:#FFE4EA
 }
 
-.estiloGeralBotoes--Bebidas{
+.filtersGeneral--Bebidas{
     background-color: #F3EEF5;
 }
 
 /*vitrine*/
-#fullBox--vitrine{
+#fullBox--showcase{
     height:300px;
 }
 
