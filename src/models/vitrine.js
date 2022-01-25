@@ -1,12 +1,16 @@
-//nome, foto, descrição, imagem, categoria com ícone e preço
 
-const assembledProducts = []
+import { ProductsRouter } from "./routes/ProductsRouter"
+
+const products = await ProductsRouter.get()
+
 
 class CreateLayout {
-    constructor(products){
+    constructor({products}){
         this.products = products
     }
+
     createEachProduct() {
+
         for(let index = 0; index < this.products.length; index++){
             let currentProduct = this.products[index]
 
@@ -16,17 +20,17 @@ class CreateLayout {
             const image           = document.createElement('img')
             const description     = document.createElement('p')
             const category        = document.createElement('span')
-            const icon            = document.createElement('img')
             const price           = document.createElement('span')
-            const list            = document.getElementById
+            const addToCart       = document.createElement('button')
+            const list            = document.getElementById('ul')
 
             //setta conteudo 
-            name.innerText        = currentProduct.name
-            image.src             = currentProduct.image
-            description.innerText = currentProduct.description
-            category.innerText    = currentProduct.category
-            icon.src              = currentProduct.icon
-            price.innerText       = currentProduct.price
+            name.innerText        = currentProduct.nome
+            image.src             = currentProduct.imagem
+            description.innerText = currentProduct.descricao
+            category.innerText    = currentProduct.categoria
+            price.innerText       = currentProduct.preco
+            addToCart.innerText   = 'Add'
             
             //setta atributos
             itemBox.setAttribute('class','li')
@@ -34,28 +38,12 @@ class CreateLayout {
             image.setAttribute('class','li__image')
             description.setAttribute('class','li__description')
             category.setAttribute('class','li_category')
-            icon.setAttribute('class','li__icon')
             price.setAttribute('class','li__price')
-            
+            addToCart.setAttribute('class','li__button')
+
             //setta pais e filhos
             list.appendChild(itemBox)
-            itemBox.appendChild(name)
-            itemBox.appendChild(image)
-            itemBox.appendChild(description)
-            itemBox.appendChild(category)
-            itemBox.appendChild(icon)
-            itemBox.appendChild(price)
-
-            //push em assembled products            
-            assembledProducts.push({
-                itemBox     : itemBox,
-                name        : name,
-                image       : image,
-                description : description,
-                category    : category,
-                icon        : icon,
-                price       : price
-            })
+            itemBox.append(name,image,description,category,price,addToCart)
         }
     }
 }
