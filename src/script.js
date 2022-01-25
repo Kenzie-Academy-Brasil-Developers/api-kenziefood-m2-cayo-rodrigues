@@ -3,17 +3,21 @@ import { ProductsRouter } from "./routes/ProductsRouter.js"
 
 // roda assim que a página carrega
 async function starter() {
+    // pegar produtos da api
     const allProducts = await ProductsRouter.get()
     localStorage.setItem('allProducts', JSON.stringify(allProducts))
 
+    // listar produtos na vitrine
     const createLayout = new CreateLayout(allProducts)
     createLayout.createEachProduct()
+
+    // identificar clicks nos produtos e passar pro carrinho
+    const showcase = document.querySelector('#fullBox--showcase')
+    showcase.onclick = handleClickOnProduct
 }
 starter()
 
-// identificar click no produto e passar pro carrinho
-const showcase = document.querySelector('#fullBox--showcase')
-showcase.onclick = (event) => {
+function handleClickOnProduct(event) {
     const target = event.target
 
     if (target.tagName === 'BUTTON') {
