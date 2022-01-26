@@ -8,7 +8,6 @@ class CreateCart {
     itemAmount() {
         const amount = document.getElementById('fullBox--shopKart__itemAmount')
         amount.innerText = this.products.length   
-        return amount
     }
     priceAmount() {
         let count = 0;
@@ -66,7 +65,7 @@ class CreateCart {
        let indexProduct = this.products.findIndex(currentProduct => {
            return currentProduct.id == productId
        })
-       
+
        this.products.splice(indexProduct,1)
 
     }

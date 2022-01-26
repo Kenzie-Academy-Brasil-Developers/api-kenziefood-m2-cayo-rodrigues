@@ -102,3 +102,5 @@ function filterSearch() {
     const createLayout = new CreateLayout(listSearch)
     createLayout.createEachProduct()
 }
+
+
