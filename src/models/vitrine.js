@@ -3,7 +3,9 @@ class CreateLayout {
         this.products = products
     }
                                                                         //fiz pequenas mudanças no código para organizar o layout
-    createEachProduct() {                                               //como os spans para p, a ordem dos itens lá no itemBox.append
+    createEachProduct() {
+        const list = document.querySelector('ul')
+        list.innerHTML = ''                                      //como os spans para p, a ordem dos itens lá no itemBox.append
                                                                         //e a correção de um ou outro typo
         for(let index = 0; index < this.products.length; index++){
             let currentProduct = this.products[index]
@@ -16,7 +18,6 @@ class CreateLayout {
             const category        = document.createElement('p')
             const price           = document.createElement('p')
             const addToCart       = document.createElement('button')
-            const list            = document.querySelector('ul')
 
             //setta conteudo
             let priceProduct = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(currentProduct.preco)
