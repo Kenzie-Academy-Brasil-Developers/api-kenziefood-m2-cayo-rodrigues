@@ -32,7 +32,7 @@ function handleClickOnProduct(event) {
     }
 }
 
-// funcionalidades de botões de filtro/pesquisa ***** favor conferir rotas ******
+// funcionalidades de botões de filtro/pesquisa
 
 const todosButton = document.getElementById('filters__button--todos');
 todosButton.addEventListener('click', filterTodos);
@@ -67,7 +67,6 @@ function filterFrutas () {
     createLayout.createEachProduct()
 }
 
-
 const bebidasButton = document.getElementById('filters__button--bebidas')
 bebidasButton.addEventListener('click', filterBebidas);
 
@@ -81,24 +80,20 @@ function filterBebidas () {
 }
 
 
-
-const searchButton = document.getElementById('searchbar__button')
-searchButton.addEventListener('click', filterSearch);
 const entrada = document.getElementById ('search')
+entrada.addEventListener('keyup', filterSearch);
 
 function filterSearch() {
     const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
 
-    let inputBuscar = entrada.value;
-
+    let entradaValue = entrada.value;
+    let inputBuscar = entradaValue.toLowerCase();
+    console.log(inputBuscar)
     const listSearch = allProducts.filter((product) => {
-        if (inputBuscar.toLowerCase()===product.categoria.toLowerCase()) {
-            return product.categoria.toLowerCase() === inputBuscar.toLowerCase();
+        
+        return product.categoria.toLowerCase().includes(inputBuscar) || product.nome.toLowerCase().includes(inputBuscar);
         }
-        else if (inputBuscar.toLowerCase()===product.name.toLowerCase()) {
-            return product.name.toLowerCase() === inputBuscar.toLowerCase();
-        }
-    });
+    );
     const createLayout = new CreateLayout(listSearch)
     createLayout.createEachProduct()
 }

@@ -2,11 +2,11 @@ class CreateLayout {
     constructor(products){
         this.products = products
     }
-                                                                        //fiz pequenas mudanças no código para organizar o layout
+                                                            
     createEachProduct() {
         const list = document.querySelector('ul')
-        list.innerHTML = ''                                      //como os spans para p, a ordem dos itens lá no itemBox.append
-                                                                        //e a correção de um ou outro typo
+        list.innerHTML = ''                                      
+                                                                       
         for(let index = 0; index < this.products.length; index++){
             let currentProduct = this.products[index]
 
@@ -27,8 +27,8 @@ class CreateLayout {
             image.src             = currentProduct.imagem
             description.innerText = currentProduct.descricao
             category.innerText    = currentProduct.categoria /* icone categorias */
-            price.innerText       = priceProduct/* sifrão e virgulas */
-            addToCart.innerText   = ''/*colocar icone carrinho*/
+            price.innerText       = priceProduct
+            addToCart.innerText   = ''
 
             //setta atributos
             itemBox.setAttribute('class','li')
