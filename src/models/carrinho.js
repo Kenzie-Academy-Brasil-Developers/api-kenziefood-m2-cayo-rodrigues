@@ -47,6 +47,7 @@ class CreateCart {
         title.setAttribute('class','cart__title')
         category.setAttribute('class','cart__category')
         price.setAttribute('class','cart__price')
+        remove.setAttribute('id', 'cart__remove')
         remove.setAttribute('class','cart__remove')
 
         image.src          = currentProduct.imagem
@@ -63,18 +64,17 @@ class CreateCart {
 
     }
 
-    removeItem(productId) {
+    removeItem(productId, cartItem) {
+        cartItem.remove()
+
+        let indexProduct = this.products.findIndex(currentProduct => {
+            return currentProduct.id == productId
+        })
+
+        this.products.splice(indexProduct,1)
+
         this.itemAmount()
         this.priceAmount()
-
-        const remove = document.getElementsByClassName('cart__remove')
-        remove.parentElement.innerHTML = ''
-
-       let indexProduct = this.products.findIndex(currentProduct => {
-           return currentProduct.id == productId
-       })
-
-       this.products.splice(indexProduct,1)
 
     }
 }
