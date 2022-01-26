@@ -1,3 +1,4 @@
+import { CreateCart } from "./models/carrinho.js"
 import { CreateLayout } from "./models/vitrine.js"
 import { ProductsRouter } from "./routes/ProductsRouter.js"
 
@@ -26,8 +27,8 @@ function handleClickOnProduct(event) {
         const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
         const chosenProduct = allProducts.find(product => product.id == productId)
 
-        // nesse ponto, chamamos o carrinho
-        console.log(chosenProduct)
+        const cart = new CreateCart()
+        cart.createItem(chosenProduct)
     }
 }
 
