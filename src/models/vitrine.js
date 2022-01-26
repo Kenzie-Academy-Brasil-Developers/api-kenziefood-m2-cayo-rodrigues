@@ -49,7 +49,7 @@ class CreateLayout {
 
             //setta pais e filhos
             list.appendChild(itemBox)
-             category.appendChild(icon)
+            category.appendChild(icon)
             itemBox.append(image,category,name,description,price,addToCart)
 
         }
