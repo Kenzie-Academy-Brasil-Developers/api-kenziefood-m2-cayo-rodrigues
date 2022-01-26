@@ -37,27 +37,33 @@ const todosButton = document.getElementById('filters__button--todos');
 todosButton.addEventListener('click', filterTodos);
 
 function filterTodos () {
-    CreateLayout.createEachProduct(allProducts);
+    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
+    const createLayout = new CreateLayout(allProducts)
+    createLayout.createEachProduct()
 }
 
 const panificadoraButton = document.getElementById('filters__button--panificadora');
 panificadoraButton.addEventListener('click', filterPanificadora);
 
 function filterPanificadora () {
+    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
     const listPanificadora = allProducts.filter((product) => {
-        return product.category === 'Panificadora';
+        return product.categoria === 'Panificadora';
     });
-    CreateLayout.createEachProduct(listPanificadora)
+    const createLayout = new CreateLayout(listPanificadora)
+    createLayout.createEachProduct()
 }
 
 const frutasButton = document.getElementById('filters__button--frutas');
 frutasButton.addEventListener('click', filterFrutas);
 
 function filterFrutas () {
+    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
     const listFrutas = allProducts.filter((product) => {
-        return product.category === 'Frutas';
+        return product.categoria === 'Frutas';
     });
-    CreateLayout.createEachProduct(listFrutas)
+    const createLayout = new CreateLayout(listFrutas)
+    createLayout.createEachProduct()
 }
 
 
@@ -65,10 +71,12 @@ const bebidasButton = document.getElementById('filters__button--bebidas')
 bebidasButton.addEventListener('click', filterBebidas);
 
 function filterBebidas () {
+    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
     const listBebidas = allProducts.filter((product) => {
-        return product.category === 'Bebidas';
+        return product.categoria === 'Bebidas';
     });
-    CreateLayout.createEachProduct(listBebidas)
+    const createLayout = new CreateLayout(listBebidas)
+    createLayout.createEachProduct()
 }
 
 
@@ -78,19 +86,18 @@ searchButton.addEventListener('click', filterSearch);
 const entrada = document.getElementById ('search')
 
 function filterSearch() {
+    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
 
     let inputBuscar = entrada.value;
 
     const listSearch = allProducts.filter((product) => {
-        if (inputBuscar.toLowerCase()===product.category.toLowerCase()) {
-            return product.category.toLowerCase() === inputBuscar.toLowerCase();
+        if (inputBuscar.toLowerCase()===product.categoria.toLowerCase()) {
+            return product.categoria.toLowerCase() === inputBuscar.toLowerCase();
         }
         else if (inputBuscar.toLowerCase()===product.name.toLowerCase()) {
             return product.name.toLowerCase() === inputBuscar.toLowerCase();
         }
     });
-        CreateLayout.createEachProduct(listSearch);
-
-    console.log()
-
+    const createLayout = new CreateLayout(listSearch)
+    createLayout.createEachProduct()
 }
