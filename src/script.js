@@ -2,6 +2,8 @@ import { CreateCart } from "./models/carrinho.js"
 import { CreateLayout } from "./models/vitrine.js"
 import { ProductsRouter } from "./routes/ProductsRouter.js"
 
+const cart = new CreateCart()
+
 // roda assim que a página carrega
 async function starter() {
     // pegar products da api
@@ -27,8 +29,9 @@ function handleClickOnProduct(event) {
         const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
         const chosenProduct = allProducts.find(product => product.id == productId)
 
-        const cart = new CreateCart()
         cart.createItem(chosenProduct)
+        console.log(cart.products)
+        console.log(cart.price)
     }
 }
 

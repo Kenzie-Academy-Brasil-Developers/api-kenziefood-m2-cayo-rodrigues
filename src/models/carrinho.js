@@ -24,11 +24,11 @@ class CreateCart {
     }
 
     createItem(product){
-        this.itemAmount()
-        this.priceAmount()
-
         let currentProduct = product
         this.products.push(product)
+
+        this.itemAmount()
+        this.priceAmount()
 
         const image     = document.createElement('img')
         const middleCol = document.createElement('div')
@@ -73,7 +73,7 @@ class CreateCart {
        let indexProduct = this.products.findIndex(currentProduct => {
            return currentProduct.id == productId
        })
-       
+
        this.products.splice(indexProduct,1)
 
     }
