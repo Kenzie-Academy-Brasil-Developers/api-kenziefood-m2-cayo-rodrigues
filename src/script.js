@@ -27,7 +27,7 @@ starter()
 function handleClickOnProduct(event) {
     const target = event.target
 
-    if (target.tagName === 'BUTTON') {
+    if (target.classList.contains('li__button') || target.tagName === 'I') {
         const card          = target.closest('li')
         const productId     = card.id
 
@@ -107,12 +107,10 @@ function filterSearch() {
     let inputBuscar = entradaValue.toLowerCase();
     console.log(inputBuscar)
     const listSearch = allProducts.filter((product) => {
-        
+
         return product.categoria.toLowerCase().includes(inputBuscar) || product.nome.toLowerCase().includes(inputBuscar);
         }
     );
     const createLayout = new CreateLayout(listSearch)
     createLayout.createEachProduct()
 }
-
-
