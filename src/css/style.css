@@ -66,13 +66,13 @@ body {
     display:flex;
     border-radius: 30px;
     height:30px;
-    width:120px;
+    width:fit-content;
     padding:6px 10px;
     border:none;
     font-size: 14px;
     font-family: Inter, sans-serif;
     cursor:pointer;
-    color:#212529;
+    color:black;
 
 }
 
@@ -124,6 +124,9 @@ body {
 .li__image{
     width: 300px;
     position: relative;
+    border:4px solid #FFE4EA;
+    border-radius:15px;
+    background-color:#FFE4EA;
 }
 
 .li__category{
@@ -281,12 +284,6 @@ body {
     justify-content: center;
 }
 
-/* item.setAttribute('class', 'cart__item')
-        image.setAttribute('class','cart__image')
-        title.setAttribute('class','cart__title')
-        category.setAttribute('class','cart__category')
-        price.setAttribute('class','cart__price')
-        remove.setAttribute('class','cart__remove') */
 
 /* ----------------- DESKTOP ------------------ */
 
