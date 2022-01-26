@@ -17,6 +17,10 @@ async function starter() {
     // identificar clicks nos products e passar pro carrinho
     const showcase = document.querySelector('#showcase')
     showcase.onclick = handleClickOnProduct
+
+    // identificar clicks nos products dentro do carrinho
+    const cartContainer = document.querySelector('#shopKart')
+    cartContainer.onclick = handleClickOnCart
 }
 starter()
 
@@ -26,12 +30,22 @@ function handleClickOnProduct(event) {
     if (target.tagName === 'BUTTON') {
         const card          = target.closest('li')
         const productId     = card.id
+
         const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
         const chosenProduct = allProducts.find(product => product.id == productId)
 
         cart.createItem(chosenProduct)
-        console.log(cart.products)
-        console.log(cart.price)
+    }
+}
+
+function handleClickOnCart(event) {
+    const target = event.target
+
+    if (target.id === 'cart__remove' || target.tagName === 'I') {
+        const item      = target.closest('li')
+        const productId = item.id
+
+        cart.removeItem(productId, item)
     }
 }
 
