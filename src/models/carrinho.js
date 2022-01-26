@@ -39,6 +39,8 @@ class CreateCart {
         const item      = document.createElement('li')
         const list      = document.getElementById('fullBox--shopKart__list')
 
+
+        item.setAttribute('id',currentProduct.id)
         item.setAttribute('class', 'cart__item')
         image.setAttribute('class','cart__image')
         middleCol.setAttribute('class', 'cart__middleCol')
@@ -53,21 +55,27 @@ class CreateCart {
         price.innerText    = currentProduct.preco
         remove.innerHTML   = '<i class="fas fa-trash"></i>'
 
+
         const firstChild = list.firstChild
         list.insertBefore(item, firstChild)
         middleCol.append(title, category, price)
         item.append(image, middleCol, remove)
+
     }
 
-    removeItem() {
+    removeItem(productId) {
         this.itemAmount()
         this.priceAmount()
 
         const remove = document.getElementsByClassName('cart__remove')
-        remove.addEventListener('click', function(){
-            remove.parentElement.innerHTML = ''
-            this.products
-        })
+        remove.parentElement.innerHTML = ''
+
+       let indexProduct = this.products.findIndex(currentProduct => {
+           return currentProduct.id == productId
+       })
+       
+       this.products.splice(indexProduct,1)
+
     }
 }
 
