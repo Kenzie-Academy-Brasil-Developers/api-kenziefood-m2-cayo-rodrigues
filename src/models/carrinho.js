@@ -11,13 +11,18 @@ class CreateCart {
         return amount
     }
     priceAmount() {
-        
+        let count = 0;
         const totalPrice = document.getElementById('fullBox--shopKart__priceTotal')
 
-        totalPrice.innerText = this.products.preco
-        let priceReturn = totalPrice
+        for(let i = 0; i < this.products.length; i ++){
+            count += this.products[i].preco 
+
+            let priceReturn = totalPrice.innerText
+            priceReturn = count
+                
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(priceReturn)
+        }
         
-        return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(priceReturn)
     }
 
     createItem(product){
