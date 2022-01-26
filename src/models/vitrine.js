@@ -7,11 +7,11 @@ class CreateLayout {
             Bebidas: 'src/css/img/Icon_glass of wine.png'
         }
     }
-                                                                        //fiz pequenas mudanças no código para organizar o layout
+                                                            
     createEachProduct() {
         const list = document.querySelector('ul')
-        list.innerHTML = ''                                      //como os spans para p, a ordem dos itens lá no itemBox.append
-                                                                        //e a correção de um ou outro typo
+        list.innerHTML = ''                                      
+                                                                       
         for(let index = 0; index < this.products.length; index++){
             let currentProduct = this.products[index] 
 
