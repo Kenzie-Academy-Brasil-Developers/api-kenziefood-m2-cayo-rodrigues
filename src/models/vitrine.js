@@ -20,11 +20,14 @@ class CreateLayout {
             const addToCart       = document.createElement('button')
 
             //setta conteudo
+            let priceProduct = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(currentProduct.preco)
+
+
             name.innerText        = currentProduct.nome
             image.src             = currentProduct.imagem
             description.innerText = currentProduct.descricao
             category.innerText    = currentProduct.categoria /* icone categorias */
-            price.innerText       = currentProduct.preco /* sifrão e virgulas */
+            price.innerText       = priceProduct/* sifrão e virgulas */
             addToCart.innerText   = ''/*colocar icone carrinho*/
 
             //setta atributos
