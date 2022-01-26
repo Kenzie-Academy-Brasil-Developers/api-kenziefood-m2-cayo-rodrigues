@@ -59,10 +59,8 @@ class CreateCart {
         this.priceAmount()
 
         const remove = document.getElementsByClassName('cart__remove')
-        remove.addEventListener('click', function(){
-            remove.parentElement.innerHTML = ''
-            this.products
-        })
+        remove.parentElement.innerHTML = ''
+       
     }
 }
 
