@@ -130,6 +130,8 @@ body {
 }
 
 .li__category{
+    display: flex;
+    flex-direction: row-reverse;
     margin-bottom:20px;
     margin-top:-15px;
     margin-left:12px;

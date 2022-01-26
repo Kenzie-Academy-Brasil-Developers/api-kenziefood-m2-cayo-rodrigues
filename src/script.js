@@ -2,6 +2,8 @@ import { CreateCart } from "./models/carrinho.js"
 import { CreateLayout } from "./models/vitrine.js"
 import { ProductsRouter } from "./routes/ProductsRouter.js"
 
+const cart = new CreateCart()
+
 // roda assim que a página carrega
 async function starter() {
     // pegar products da api
@@ -15,6 +17,10 @@ async function starter() {
     // identificar clicks nos products e passar pro carrinho
     const showcase = document.querySelector('#showcase')
     showcase.onclick = handleClickOnProduct
+
+    // identificar clicks nos products dentro do carrinho
+    const cartContainer = document.querySelector('#shopKart')
+    cartContainer.onclick = handleClickOnCart
 }
 starter()
 
@@ -24,15 +30,26 @@ function handleClickOnProduct(event) {
     if (target.tagName === 'BUTTON') {
         const card          = target.closest('li')
         const productId     = card.id
+
         const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
         const chosenProduct = allProducts.find(product => product.id == productId)
 
-        const cart = new CreateCart()
         cart.createItem(chosenProduct)
     }
 }
 
-// funcionalidades de botões de filtro/pesquisa
+function handleClickOnCart(event) {
+    const target = event.target
+
+    if (target.id === 'cart__remove' || target.tagName === 'I') {
+        const item      = target.closest('li')
+        const productId = item.id
+
+        cart.removeItem(productId, item)
+    }
+}
+
+// funcionalidades de botões de filtro/pesquisa ***** favor conferir rotas ******
 
 const todosButton = document.getElementById('filters__button--todos');
 todosButton.addEventListener('click', filterTodos);
@@ -97,3 +114,5 @@ function filterSearch() {
     const createLayout = new CreateLayout(listSearch)
     createLayout.createEachProduct()
 }
+
+

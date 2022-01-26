@@ -1,6 +1,11 @@
 class CreateLayout {
     constructor(products){
         this.products = products
+        this.categories = {
+            Frutas: 'src/css/img/Icon_fruits.png',
+            Panificadora: 'src/css/img/Icon_bread.png',
+            Bebidas: 'src/css/img/Icon_glass of wine.png'
+        }
     }
                                                             
     createEachProduct() {
@@ -8,7 +13,7 @@ class CreateLayout {
         list.innerHTML = ''                                      
                                                                        
         for(let index = 0; index < this.products.length; index++){
-            let currentProduct = this.products[index]
+            let currentProduct = this.products[index] 
 
             //pega cada item
             const itemBox         = document.createElement('li')
@@ -18,17 +23,18 @@ class CreateLayout {
             const category        = document.createElement('p')
             const price           = document.createElement('p')
             const addToCart       = document.createElement('button')
+            const icon            = document.createElement('img')
 
             //setta conteudo
             let priceProduct = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(currentProduct.preco)
 
-
+            icon.src              = this.categories[currentProduct.categoria]
             name.innerText        = currentProduct.nome
             image.src             = currentProduct.imagem
             description.innerText = currentProduct.descricao
-            category.innerText    = currentProduct.categoria /* icone categorias */
+            category.innerText    = currentProduct.categoria 
             price.innerText       = priceProduct
-            addToCart.innerText   = ''
+            addToCart.innerHTML   = '<i class="fas fa-cart-plus"></i>'
 
             //setta atributos
             itemBox.setAttribute('class','li')
@@ -39,10 +45,13 @@ class CreateLayout {
             category.setAttribute('class','li__category')
             price.setAttribute('class','li__price')
             addToCart.setAttribute('class','li__button')
+            icon.setAttribute('class','li__category--icon')
 
             //setta pais e filhos
             list.appendChild(itemBox)
+             category.appendChild(icon)
             itemBox.append(image,category,name,description,price,addToCart)
+           
         }
     }
 }
