@@ -16,13 +16,11 @@ class CreateCart {
 
         for(let i = 0; i < this.products.length; i ++){
             count += this.products[i].preco 
-
-            let priceReturn = totalPrice.innerText
-            priceReturn = count
-                
-            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(priceReturn)
         }
-        
+
+        let priceReturn = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(count)         
+        totalPrice.innerText = priceReturn
+        this.price = count
     }
 
     createItem(product){
