@@ -11,52 +11,68 @@
     <title>KenzieFood Form</title>
 </head>
 <body>
+    <header id="header" class="header">
+
+        <div id="Logo" class="logo">
+        <img src="src/css/img/Logo.png">
+        </div>
+
+    </header>
     <section class='form'>
 
         <div class='form__title'>
-           <h1 class='form__title--text'>Adicionar ao cardápio</h1> 
-        </div>   
+           <h1 class='form__title--text'>Adicionar ao cardápio</h1>
+        </div>
 
         <form class='form__inputs'>
 
             <div>
             <h2 class='form__inputs--title'>Nome do Produto</h2>
-            <input type="text" id="name" name="name" value="' '">
+
+            <input type="text" id="name" name="nome">
+
             <h3 class='form__inputs--specific'>Formato string</h3>
             </div>
 
             <div>
             <h2 class='form__inputs--title'>Categoria</h2>
-            <select name="category" id="category">
-                <option value="Frutas">'Frutas'</option>
-                <option value="Bebidas">'Bebidas'</option>
-                <option value="Panificadora">'Panificadora'</option>
+
+            <select name="categoria" id="categoria">
+                <option value="" disabled selected></option>
+                <option value="Frutas">Frutas</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Panificadora">Panificadora</option>
             </select>
             <h3 class='form__inputs--specific'>Escolha uma categoria</h3>
             </div>
 
             <div>
             <h2 class='form__inputs--title'>Decrição</h2>
-            <input type="text" id="description" name="description" value="' '">
+
+            <input type="text" id="descrição" name="descricao">
+
             <h3 class='form__inputs--specific'>Formato string</h3>
             </div>
 
             <div>
             <h2 class='form__inputs--title'>Preço</h2>
-            <input type="number" id="price" name="price">
+
+            <input type="number" id="price" name="preco">
+
             <h3 class='form__inputs--specific'>Informe um numero real</h3>
             </div>
 
             <div>
             <h2 class='form__inputs--title'>Imagem</h2>
-            <input type="url" id="image" name="image" placeholder="https://example.com">
+
+            <input type="url" id="image" name="imagem" placeholder="https://example.com">
             <h3 class='form__inputs--specific'>Informe a url da imagem</h3>
             </div>
 
+            <input id="form__submit" type="submit" value="Enviar produto">
         </form>
 
-        <input id="form__submit" type="submit" value="Enviar produto">
-
     </section>
+    <script src="./src/form.js" type="module"></script>
 </body>
 </html>

@@ -33,15 +33,15 @@ class CreateLayout {
             price.innerText       = priceProduct
             addToCart.innerHTML   = '<i class="fas fa-cart-plus"></i>'
 
-            itemBox.setAttribute('class','li')
+            itemBox.setAttribute('class','card')
             itemBox.setAttribute('id', currentProduct.id)
-            name.setAttribute('class','li__name')
-            image.setAttribute('class','li__image')
-            description.setAttribute('class','li__description')
-            category.setAttribute('class','li__category')
-            price.setAttribute('class','li__price')
-            addToCart.setAttribute('class','li__button')
-            icon.setAttribute('class','li__category--icon')
+            name.setAttribute('class','card__name')
+            image.setAttribute('class','card__image')
+            description.setAttribute('class','card__description')
+            category.setAttribute('class','card__category')
+            price.setAttribute('class','card__price')
+            addToCart.setAttribute('class','card__button')
+            icon.setAttribute('class','card__category--icon')
 
             list.appendChild(itemBox)
             category.appendChild(icon)
