@@ -44,6 +44,12 @@ class CreateCart {
         cartInfo.innerHTML = ''
         cartInfo.classList.remove('shopKart__info')
 
+        const itemsAmount = document.querySelector('.fullBox--shopKart__itemAmount')
+        const totalPrice = document.querySelector('.fullBox--shopKart__priceTotal')
+
+        itemsAmount.classList.remove('hidden')
+        totalPrice.classList.remove('hidden')
+
         item.setAttribute('id',currentProduct.id)
         item.setAttribute('class', 'cart__item')
         image.setAttribute('class','cart__image')
@@ -86,6 +92,12 @@ class CreateCart {
         if(list.childElementCount === 0){
             cartInfo.innerHTML = "<img src='src/css/img/shopping-bag.png'><h1>Ops!</h1><p>Por enquanto não temos produtos no carrinho</p>"
             cartInfo.classList.add('shopKart__info')
+
+            const itemsAmount = document.querySelector('.fullBox--shopKart__itemAmount')
+            const totalPrice = document.querySelector('.fullBox--shopKart__priceTotal')
+
+            itemsAmount.classList.add('hidden')
+            totalPrice.classList.add('hidden')
         }
     }
 }

@@ -7,12 +7,15 @@ const showcase = new CreateLayout()
 
 // roda assim que a página carrega
 async function starter() {
-    // pegar products da api
-    const allProducts = await ProductsRouter.get()
+    // pegar produtos da api
+    const products    = await ProductsRouter.get()
+    const ownProducts = await ProductsRouter.getOwnProducts()
+    const allProducts = [...products, ...ownProducts]
+
+    // armazenar produtos para evitar fazer muitas requisições
     localStorage.setItem('allProducts', JSON.stringify(allProducts))
 
     // listar products na vitrine
-
     showcase.createEachProduct(allProducts)
 
     // identificar clicks nos products e passar pro carrinho
@@ -58,6 +61,7 @@ function handleClickOnFilters(event) {
     const category      = button.dataset.category
     const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
     let filteredList    = allProducts
+    console.log(category)
 
     if (category !== 'Todos') {
         filteredList = allProducts.filter(product => {
@@ -71,15 +75,21 @@ const entrada = document.getElementById ('search')
 entrada.addEventListener('keyup', filterSearch);
 
 function filterSearch() {
-    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
+    const allProducts = JSON.parse(localStorage.getItem('allProducts'))
 
+<<<<<<< HEAD
     let entradaValue = entrada.value;
     let inputBuscar = entradaValue.toLowerCase().trim();
     console.log(inputBuscar)
     const listSearch = allProducts.filter((product) => {
+=======
+    let entradaValue  = entrada.value
+    let inputBuscar   = entradaValue.toLowerCase()
+>>>>>>> 266dee4b3772bc8b8bc484671337925a4f7ca665
 
-        return product.categoria.toLowerCase().includes(inputBuscar) || product.nome.toLowerCase().includes(inputBuscar);
-        }
-    );
+    const listSearch  = allProducts.filter((product) => {
+        return product.categoria.toLowerCase().trim().includes(inputBuscar.toLowerCase().trim())
+            || product.nome.toLowerCase().trim().includes(inputBuscar.toLowerCase().trim())
+    })
     showcase.createEachProduct(listSearch)
 }
