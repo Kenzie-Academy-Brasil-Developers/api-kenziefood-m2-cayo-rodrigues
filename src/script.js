@@ -75,15 +75,14 @@ const entrada = document.getElementById ('search')
 entrada.addEventListener('keyup', filterSearch);
 
 function filterSearch() {
-    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
+    const allProducts = JSON.parse(localStorage.getItem('allProducts'))
 
-    let entradaValue = entrada.value;
-    let inputBuscar = entradaValue.toLowerCase();
-    console.log(inputBuscar)
-    const listSearch = allProducts.filter((product) => {
+    let entradaValue  = entrada.value
+    let inputBuscar   = entradaValue.toLowerCase()
 
-        return product.categoria.toLowerCase().includes(inputBuscar) || product.nome.toLowerCase().includes(inputBuscar);
-        }
-    );
+    const listSearch  = allProducts.filter((product) => {
+        return product.categoria.toLowerCase().trim().includes(inputBuscar.toLowerCase().trim())
+            || product.nome.toLowerCase().trim().includes(inputBuscar.toLowerCase().trim())
+    })
     showcase.createEachProduct(listSearch)
 }
