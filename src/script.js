@@ -22,6 +22,9 @@ async function starter() {
 
     const filterButtons = document.querySelectorAll('.filters__button')
     filterButtons.forEach(button => button.onclick = handleClickOnFilters)
+
+    const searchInput = document.getElementById('search')
+    searchInput.addEventListener('keyup', filterSearch)
 }
 starter()
 
@@ -53,6 +56,7 @@ function handleClickOnCart(event) {
 function handleClickOnFilters(event) {
     const button        = event.currentTarget
     const category      = button.dataset.category
+
     const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
     let filteredList    = allProducts
 
@@ -64,13 +68,10 @@ function handleClickOnFilters(event) {
     showcase.createEachProduct(filteredList)
 }
 
-const searchInput = document.getElementById ('search')
-searchInput.addEventListener('keyup', filterSearch)
-
 function filterSearch() {
     const allProducts = JSON.parse(localStorage.getItem('allProducts'))
 
-    let inputValue    = searchInput.value
+    let inputValue    = this.value
     let inputBuscar   = inputValue.toLowerCase().trim()
 
     const listSearch  = allProducts.filter((product) => {

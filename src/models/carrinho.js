@@ -61,7 +61,7 @@ class CreateCart {
         remove.setAttribute('class','cart__remove')
 
         let priceProduct = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(currentProduct.preco)
-       
+
         image.src          = currentProduct.imagem
         title.innerText    = currentProduct.nome
         category.innerText = currentProduct.categoria
@@ -91,7 +91,7 @@ class CreateCart {
         const list      = document.getElementById('fullBox--shopKart__list')
 
         if(list.childElementCount === 0){
-            cartInfo.innerHTML = "<img src='src/css/img/shopping-bag.png'><h1>Ops!</h1><p>Por enquanto não temos produtos no carrinho</p>"
+            cartInfo.innerHTML = "<img src='src/css/img/shopping-bag.png'><h2>Ops!</h2><p>Por enquanto não temos produtos no carrinho</p>"
             cartInfo.classList.add('shopKart__info')
 
             const itemsAmount = document.querySelector('.fullBox--shopKart__itemAmount')
