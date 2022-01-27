@@ -6,9 +6,13 @@ body {
     font-family: Poppins, sans-serif;
 }
 
-#header{
+.header{
     height: 100px;
     margin-top:10px;
+}
+
+.logo {
+    margin-top: 10px;
 }
 
 .searchbar__button{
@@ -178,7 +182,7 @@ body {
 
 /*carrinho*/
 .shopKart{
-    height:340px;
+    height:320px;
     width:100%;
     margin-bottom: -15px;
     padding: 20px 0;
@@ -214,7 +218,7 @@ body {
 
 .shopKart__info{
     margin-top: -15px;
-    padding: 80px 40px;
+    padding: 70px 40px;
     text-align:center;
     color:#868E96;
     background-color:#E9ECEF;
@@ -303,11 +307,17 @@ body {
 @media screen and (min-width: 900px) {
 
     body {
-        margin-left:100px;
-        margin-right:100px;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        margin: 0 100px;
     }
 
     .header{
+        margin: 0;
+        padding: 0 100px;
         background: #FFF;
         padding-top:10px;
         display:flex;
@@ -315,6 +325,7 @@ body {
         position: sticky;
         top: 0;
         z-index: 1;
+        box-shadow: 0px 0px 40px -20px #00000040;
     }
 
     .searchbar__input{
