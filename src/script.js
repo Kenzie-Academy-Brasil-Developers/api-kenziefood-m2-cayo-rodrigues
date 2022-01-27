@@ -28,7 +28,7 @@ starter()
 function handleClickOnProduct(event) {
     const target = event.target
 
-    if (target.classList.contains('li__button') || target.tagName === 'I') {
+    if (target.classList.contains('card__button') || target.tagName === 'I') {
         const card          = target.closest('li')
         const productId     = card.id
 
