@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style__form.css">
+
+    <title>KenzieFood Form</title>
+</head>
+<body>
+    <section class='form'>
+
+        <div class='form__title'>
+           <h1 class='form__title--text'>Adicionar ao cardápio</h1> 
+        </div>   
+
+        <div class='form__inputs'>
+
+            <div>
+            <h2 class='form__inputs--title'>Nome do Produto</h2>
+            <input type="text" id="name" name="name" value="' '">
+            <h3 class='form__inputs--specific'>Formato string</h3>
+            </div>
+
+            <div>
+            <h2 class='form__inputs--title'>Categoria</h2>
+            <input type="text" id="category" name="category" value="' '">
+            <h3 class='form__inputs--specific'>Formato string</h3>
+            </div>
+
+            <div>
+            <h2 class='form__inputs--title'>Decrição</h2>
+            <input type="text" id="description" name="description" value="' '">
+            <h3 class='form__inputs--specific'>Formato string</h3>
+            </div>
+
+            <div>
+            <h2 class='form__inputs--title'>Preço</h2>
+            <input type="number" id="price" name="price">
+            <h3 class='form__inputs--specific'>Informe um numero real</h3>
+            </div>
+
+            <div>
+            <h2 class='form__inputs--title'>Imagem</h2>
+            <input type="url" id="image" name="image" placeholder="https://example.com">
+            <h3 class='form__inputs--specific'>Informe a url da imagem</h3>
+            </div>
+
+        </div>
+
+        <input id="form__submit" type="submit" value="Enviar produto">
+
+    </section>
+</body>
+</html>
