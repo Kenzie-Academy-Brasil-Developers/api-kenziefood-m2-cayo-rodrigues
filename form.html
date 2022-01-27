@@ -17,7 +17,7 @@
            <h1 class='form__title--text'>Adicionar ao cardápio</h1> 
         </div>   
 
-        <div class='form__inputs'>
+        <form class='form__inputs'>
 
             <div>
             <h2 class='form__inputs--title'>Nome do Produto</h2>
@@ -27,8 +27,12 @@
 
             <div>
             <h2 class='form__inputs--title'>Categoria</h2>
-            <input type="text" id="category" name="category" value="' '">
-            <h3 class='form__inputs--specific'>Formato string</h3>
+            <select name="category" id="category">
+                <option value="Frutas">'Frutas'</option>
+                <option value="Bebidas">'Bebidas'</option>
+                <option value="Panificadora">'Panificadora'</option>
+            </select>
+            <h3 class='form__inputs--specific'>Escolha uma categoria</h3>
             </div>
 
             <div>
