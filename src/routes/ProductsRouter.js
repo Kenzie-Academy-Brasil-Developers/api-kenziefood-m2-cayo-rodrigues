@@ -2,7 +2,6 @@ class ProductsRouter {
     static baseUrl  = 'https://kenzie-food-api.herokuapp.com'
     static token    = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgsImlhdCI6MTY0MzExNzgwMywiZXhwIjoxNjQzOTgxODAzLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.W6gaI05R-6x2sIR09GWfR9L2juHP2KktvKrDgSq_Bt8'
 
-    // GET PRODUTO/PRODUTOS (PADRÃO)
     static
     async get(id='') {
         return await fetch(`${this.baseUrl}/product/${id}`)
@@ -11,7 +10,6 @@ class ProductsRouter {
         .catch(error => error)
     }
 
-    // GET PRODUTO/PRODUTOS QUE VOCÊ ADICIONOU (EXTRA)
     static
     async getOwnProducts(id='') {
         return await fetch(`${this.baseUrl}/my/product/${id}`, {
@@ -22,7 +20,6 @@ class ProductsRouter {
         .catch(error => error)
     }
 
-    // POST NOVO PRODUTO (EXTRA)
     static
     async postOwnProduct(data) {
         return await fetch(`${this.baseUrl}/my/product`, {
@@ -38,7 +35,6 @@ class ProductsRouter {
         .catch(error => error)
     }
 
-    // ATUALIZAR PRODUTO QUE VOCÊ ADICIONOU (EXTRA)
     static
     async updateOwnProduct(id, data) {
         return await fetch(`${this.baseUrl}/my/product/${id}`, {
@@ -54,7 +50,6 @@ class ProductsRouter {
         .catch(error => error)
     }
 
-    // DELETAR PRODUTO QUE VOCÊ ADICIONOU (EXTRA)
     static
     async deleteOwnProduct(id) {
         return await fetch(`${this.baseUrl}/my/product/${id}`, {

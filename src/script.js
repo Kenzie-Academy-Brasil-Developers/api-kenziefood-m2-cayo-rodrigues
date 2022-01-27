@@ -5,24 +5,18 @@ import { ProductsRouter } from "./routes/ProductsRouter.js"
 const cart = new CreateCart()
 const showcase = new CreateLayout()
 
-// roda assim que a página carrega
 async function starter() {
-    // pegar produtos da api
     const products    = await ProductsRouter.get()
     const ownProducts = await ProductsRouter.getOwnProducts()
     const allProducts = [...products, ...ownProducts]
 
-    // armazenar produtos para evitar fazer muitas requisições
     localStorage.setItem('allProducts', JSON.stringify(allProducts))
 
-    // listar products na vitrine
     showcase.createEachProduct(allProducts)
 
-    // identificar clicks nos products e passar pro carrinho
     const showcaseContainer = document.querySelector('#showcase')
     showcaseContainer.onclick = handleClickOnProduct
 
-    // identificar clicks nos products dentro do carrinho
     const cartContainer = document.querySelector('#shopKart')
     cartContainer.onclick = handleClickOnCart
 
@@ -61,7 +55,6 @@ function handleClickOnFilters(event) {
     const category      = button.dataset.category
     const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
     let filteredList    = allProducts
-    console.log(category)
 
     if (category !== 'Todos') {
         filteredList = allProducts.filter(product => {
@@ -71,18 +64,18 @@ function handleClickOnFilters(event) {
     showcase.createEachProduct(filteredList)
 }
 
-const entrada = document.getElementById ('search')
-entrada.addEventListener('keyup', filterSearch);
+const searchInput = document.getElementById ('search')
+searchInput.addEventListener('keyup', filterSearch)
 
 function filterSearch() {
     const allProducts = JSON.parse(localStorage.getItem('allProducts'))
 
-    let entradaValue  = entrada.value
-    let inputBuscar   = entradaValue.toLowerCase()
+    let inputValue    = searchInput.value
+    let inputBuscar   = inputValue.toLowerCase().trim()
 
     const listSearch  = allProducts.filter((product) => {
-        return product.categoria.toLowerCase().trim().includes(inputBuscar.toLowerCase().trim())
-            || product.nome.toLowerCase().trim().includes(inputBuscar.toLowerCase().trim())
+        return product.categoria.toLowerCase().trim().includes(inputBuscar)
+            || product.nome.toLowerCase().trim().includes(inputBuscar)
     })
     showcase.createEachProduct(listSearch)
 }
