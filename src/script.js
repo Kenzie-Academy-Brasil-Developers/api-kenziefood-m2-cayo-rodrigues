@@ -74,7 +74,7 @@ function filterSearch() {
     const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
 
     let entradaValue = entrada.value;
-    let inputBuscar = entradaValue.toLowerCase();
+    let inputBuscar = entradaValue.toLowerCase().trim();
     console.log(inputBuscar)
     const listSearch = allProducts.filter((product) => {
 
