@@ -15,7 +15,6 @@ class CreateLayout {
         for(let index = 0; index < this.products.length; index++){
             let currentProduct = this.products[index] 
 
-            //pega cada item
             const itemBox         = document.createElement('li')
             const name            = document.createElement('h2')
             const image           = document.createElement('img')
@@ -25,7 +24,6 @@ class CreateLayout {
             const addToCart       = document.createElement('button')
             const icon            = document.createElement('img')
 
-            //setta conteudo
             let priceProduct = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(currentProduct.preco)
 
             icon.src              = this.categories[currentProduct.categoria]
@@ -36,7 +34,6 @@ class CreateLayout {
             price.innerText       = priceProduct
             addToCart.innerHTML   = '<i class="fas fa-cart-plus"></i>'
 
-            //setta atributos
             itemBox.setAttribute('class','li')
             itemBox.setAttribute('id', currentProduct.id)
             name.setAttribute('class','li__name')
@@ -47,7 +44,6 @@ class CreateLayout {
             addToCart.setAttribute('class','li__button')
             icon.setAttribute('class','li__category--icon')
 
-            //setta pais e filhos
             list.appendChild(itemBox)
              category.appendChild(icon)
             itemBox.append(image,category,name,description,price,addToCart)

@@ -49,7 +49,6 @@ function handleClickOnCart(event) {
     }
 }
 
-// funcionalidades de botões de filtro/pesquisa ***** favor conferir rotas ******
 
 const todosButton = document.getElementById('filters__button--todos');
 todosButton.addEventListener('click', filterTodos);
