@@ -198,7 +198,6 @@ body {
 }
 
 
-/*carrinho*/
 .shopKart{
     height:320px;
     width:100%;
@@ -242,7 +241,7 @@ body {
     background-color:#E9ECEF;
 }
 
-.shopKart__info h1{
+.shopKart__info h2{
     margin-top:20px;
     margin-bottom:20px;
     font-size:22px;
