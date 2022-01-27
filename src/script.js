@@ -61,6 +61,7 @@ function handleClickOnFilters(event) {
     const category      = button.dataset.category
     const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
     let filteredList    = allProducts
+    console.log(category)
 
     if (category !== 'Todos') {
         filteredList = allProducts.filter(product => {
