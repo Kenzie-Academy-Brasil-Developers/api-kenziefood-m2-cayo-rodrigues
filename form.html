@@ -14,30 +14,31 @@
     <section class='form'>
 
         <div class='form__title'>
-           <h1 class='form__title--text'>Adicionar ao cardápio</h1> 
-        </div>   
+           <h1 class='form__title--text'>Adicionar ao cardápio</h1>
+        </div>
 
         <form class='form__inputs'>
 
             <div>
             <h2 class='form__inputs--title'>Nome do Produto</h2>
-            <input type="text" id="name" name="name" value="' '">
+            <input type="text" id="name" name="name">
             <h3 class='form__inputs--specific'>Formato string</h3>
             </div>
 
             <div>
             <h2 class='form__inputs--title'>Categoria</h2>
             <select name="category" id="category">
-                <option value="Frutas">'Frutas'</option>
-                <option value="Bebidas">'Bebidas'</option>
-                <option value="Panificadora">'Panificadora'</option>
+                <option value="" disabled selected></option>
+                <option value="Frutas">Frutas</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Panificadora">Panificadora</option>
             </select>
             <h3 class='form__inputs--specific'>Escolha uma categoria</h3>
             </div>
 
             <div>
             <h2 class='form__inputs--title'>Decrição</h2>
-            <input type="text" id="description" name="description" value="' '">
+            <input type="text" id="description" name="description">
             <h3 class='form__inputs--specific'>Formato string</h3>
             </div>
 
@@ -53,10 +54,10 @@
             <h3 class='form__inputs--specific'>Informe a url da imagem</h3>
             </div>
 
+            <input id="form__submit" type="submit" value="Enviar produto">
         </form>
 
-        <input id="form__submit" type="submit" value="Enviar produto">
-
     </section>
+    <script src="./src/form.js" type="module"></script>
 </body>
 </html>
