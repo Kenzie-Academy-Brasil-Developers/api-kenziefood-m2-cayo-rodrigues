@@ -7,12 +7,15 @@ const showcase = new CreateLayout()
 
 // roda assim que a página carrega
 async function starter() {
-    // pegar products da api
-    const allProducts = await ProductsRouter.get()
+    // pegar produtos da api
+    const products    = await ProductsRouter.get()
+    const ownProducts = await ProductsRouter.getOwnProducts()
+    const allProducts = [...products, ...ownProducts]
+
+    // armazenar produtos para evitar fazer muitas requisições
     localStorage.setItem('allProducts', JSON.stringify(allProducts))
 
     // listar products na vitrine
-
     showcase.createEachProduct(allProducts)
 
     // identificar clicks nos products e passar pro carrinho
