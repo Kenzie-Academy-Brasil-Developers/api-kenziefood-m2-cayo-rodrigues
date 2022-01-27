@@ -24,6 +24,12 @@ body {
     margin-left:-50px;
     background-color:#FFE4EA;
     border-style:none;
+    color: #FF2253;
+}
+
+.searchbar__button:hover {
+    background: #FF2253;
+    color: #FFF;
 }
 
 .searchbar__input {
@@ -72,11 +78,12 @@ body {
     font-family: Inter, sans-serif;
     cursor:pointer;
     color:black;
+    border: 2px solid transparent;
 
 }
 
 .filters__button img {
-    padding-right:10px;;
+    padding-right:10px;
 }
 
 .filters__button:hover{
@@ -100,7 +107,7 @@ body {
 }
 
 .fullBox--home{
-    height: 375px
+    height: 375px;
 }
 
 .showcase {
@@ -123,9 +130,13 @@ body {
 .li__image{
     width: 300px;
     position: relative;
-    border:4px solid #FFE4EA;
+    border: 3px solid #FFE4EA;
     border-radius:15px;
     background-color:#FFE4EA;
+}
+
+.li__image:hover {
+    border: 3px solid #FF2253;
 }
 
 .li__category{
@@ -177,6 +188,12 @@ body {
     border-style:none;
     background-color:#E4F7EF;
     cursor:pointer;
+    color: #4ACA94;
+}
+
+.li__button:hover {
+    color: #FFF;
+    background: #4ACA94;
 }
 
 
@@ -297,6 +314,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+.cart__remove:hover {
+    background: #868E96;
+    color: #F8F9FA;
 }
 
 .hidden {
@@ -335,7 +358,7 @@ body {
     .fullBox--home{
         display:flex;
         justify-content:space-between;
-        height:900px;
+        height: fit-content;
     }
 
     .li{
@@ -349,6 +372,7 @@ body {
     .filters {
         width: 62%;
         flex-wrap: wrap;
+        margin-top: 25px;
     }
     .filters__button {
         width: fit-content;
@@ -367,11 +391,17 @@ body {
         width: 320px;
         position: fixed;
         right: 100px;
-        top: 120px;
+        top: 130px;
     }
 
     .shopKart{
         width:320px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .li {
+        margin-bottom: 50px;
     }
 }
 
