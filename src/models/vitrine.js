@@ -1,6 +1,5 @@
 class CreateLayout {
-    constructor(products){
-        this.products = products
+    constructor(){
         this.categories = {
             Frutas: 'src/css/img/Icon_fruits.png',
             Panificadora: 'src/css/img/Icon_bread.png',
@@ -8,12 +7,12 @@ class CreateLayout {
         }
     }
 
-    createEachProduct() {
+    createEachProduct(products) {
         const list = document.querySelector('ul')
         list.innerHTML = ''
 
-        for(let index = 0; index < this.products.length; index++){
-            let currentProduct = this.products[index]
+        for(let index = 0; index < products.length; index++){
+            let currentProduct = products[index]
 
             //pega cada item
             const itemBox         = document.createElement('li')

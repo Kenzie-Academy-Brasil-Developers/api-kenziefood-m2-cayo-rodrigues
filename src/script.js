@@ -3,6 +3,7 @@ import { CreateLayout } from "./models/vitrine.js"
 import { ProductsRouter } from "./routes/ProductsRouter.js"
 
 const cart = new CreateCart()
+const showcase = new CreateLayout()
 
 // roda assim que a página carrega
 async function starter() {
@@ -11,12 +12,12 @@ async function starter() {
     localStorage.setItem('allProducts', JSON.stringify(allProducts))
 
     // listar products na vitrine
-    const createLayout = new CreateLayout(allProducts)
-    createLayout.createEachProduct()
+
+    showcase.createEachProduct(allProducts)
 
     // identificar clicks nos products e passar pro carrinho
-    const showcase = document.querySelector('#showcase')
-    showcase.onclick = handleClickOnProduct
+    const showcaseContainer = document.querySelector('#showcase')
+    showcaseContainer.onclick = handleClickOnProduct
 
     // identificar clicks nos products dentro do carrinho
     const cartContainer = document.querySelector('#shopKart')
@@ -63,8 +64,7 @@ function handleClickOnFilters(event) {
             return product.categoria === category
         })
     }
-    const createLayout = new CreateLayout(filteredList)
-    createLayout.createEachProduct()
+    showcase.createEachProduct(filteredList)
 }
 
 const entrada = document.getElementById ('search')
@@ -81,6 +81,5 @@ function filterSearch() {
         return product.categoria.toLowerCase().includes(inputBuscar) || product.nome.toLowerCase().includes(inputBuscar);
         }
     );
-    const createLayout = new CreateLayout(listSearch)
-    createLayout.createEachProduct()
+    showcase.createEachProduct(listSearch)
 }
