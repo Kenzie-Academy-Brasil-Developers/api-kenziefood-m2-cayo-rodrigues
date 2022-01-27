@@ -352,3 +352,18 @@ body {
         width:320px;
     }
 }
+
+@media screen and (min-width: 1500px) {
+    .showcase {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1620px) {
+    .showcase {
+        width: 79%;
+    }
+    .fullBox--shopKart, .shopKart {
+        width: 360px;
+    }
+}
