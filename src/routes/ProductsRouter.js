@@ -61,7 +61,6 @@ class ProductsRouter {
             headers: { 'Authorization': `Token ${this.token}` },
             method: 'delete'
         })
-        .then(res => res.json())
         .catch(error => error)
     }
 }
