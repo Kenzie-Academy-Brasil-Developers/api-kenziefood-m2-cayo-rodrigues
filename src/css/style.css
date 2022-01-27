@@ -17,14 +17,9 @@ body {
     height: 40px;
     cursor:pointer;
     margin-top:13px;
-    margin-left:-42px;
+    margin-left:-50px;
     background-color:#FFE4EA;
     border-style:none;
-}
-
-.searchbar__button:hover{
-    background-color:#FFE4EA;
-    color:white;
 }
 
 .searchbar__input {
@@ -183,6 +178,7 @@ body {
     margin-bottom: -15px;
     padding: 20px 0;
     overflow-y: auto;
+    font-style:Poppins;
 }
 .shopKart--noItems {
     background-color:#E9ECEF;
@@ -198,13 +194,17 @@ body {
 }
 
 .shopKart__txt{
-    height:40px;
+    height:55px;
     width:100%;
     background-color:#FF2253;
     border-radius: 12px 15px 0px 0px;
-    padding:12px 20px;
+    padding:20px 20px;
     color:white;
-    margin-bottom:-20px;
+    font-weight:bolder;
+}
+
+.shopKart__icon{
+    margin-right:15px;
 }
 
 .shopKart__info{
@@ -213,6 +213,10 @@ body {
     text-align:center;
     color:#868E96;
     background-color:#E9ECEF;
+/*  CONFLITO  */
+/*     padding-bottom:100px;
+    margin-top:-20px; */
+/*  CONFLITO  */
 }
 
 .shopKart__info h1{
