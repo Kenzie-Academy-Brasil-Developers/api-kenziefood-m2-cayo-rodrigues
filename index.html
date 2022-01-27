@@ -4,50 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
+
+    <script src="https://kit.fontawesome.com/0313317065.js" crossorigin="anonymous"></script>
+
     <title>E-commerce</title>
 </head>
 <body>
     <header id="header" class="header">
 
-        <!--logo kenziefood-->
         <div id="Logo" class="Logo">
         <img src="src/css/img/Logo.png">
         </div>
 
-        <!--box da barra de pesquisa-->
         <div id="searchbar" class="searchbar">
-            <!--input / botão-->
-            <input type="text" placeholder="pesquisar por produto" id="search" name="search" class="searchbar__input">
-            <button class="searchbar__button"></button>
+            <input type="text" placeholder="Pesquisar por produto" id="search" name="search" class="searchbar__input">
+            <button id="searchbar__button" class="searchbar__button"> <img src="src/css/img/search.png" </button>
         </div>
     </header>
 
     <main>
-        <!--botões de filtro-->
         <div id="filters" class="filters">
-            <button class="filters__button filters__button--todos">todos</button>
-            <button class="filters__button filters__button--panificadora">
-                <img src="src/css/img/Icon_bread.png">panificadora</button>
-            <button class="filters__button filters__button--frutas">
-                <img src="src/css/img/Icon_fruits.png">frutas</button>
-            <button class="filters__button filters__button--bebidas">
-                <img src="src/css/img/Icon_glass of wine.png">bebidas</button>
+
+            <button id="filters__button--todos" class="filters__button filters__button--todos">Todos</button>
+
+            <button id="filters__button--panificadora" class="filters__button filters__button--panificadora">
+            <img src="src/css/img/Icon_bread.png">Panificadora</button>
+
+            <button id="filters__button--frutas" class="filters__button filters__button--frutas">
+            <img src="src/css/img/Icon_fruits.png">Frutas</button>
+
+            <button id="filters__button--bebidas" class="filters__button filters__button--bebidas">
+            <img src="src/css/img/Icon_glass of wine.png">Bebidas</button>
+
         </div>
 
-        <div id="fullBox--showcase" class="fullBox--showcase">
-          
-            <!--vitrine-->
-            <ul id="showcase"></ul>
-        
-            <!--carrinho-->
+        <section id="fullBox--home" class="fullBox--home">
+
+            <ul id="showcase" class="showcase"></ul>
+
             <div id="fullBox--shopKart" class="fullBox--shopKart">
-                    <p id="shopKart__txt" class="shopKart__txt">carrinho</p>
+                <p id="shopKart__txt" class="shopKart__txt">
+                    <i class="fas fa-cart-arrow-down shopKart__icon"></i>
+                    <span class="shopKart__cartTitle">Carrinho</span>
+                </p>
+
                 <div id="shopKart" class="shopKart">
+                    <div id="shopKart__info" class="shopKart__info">
+                        <img src="src/css/img/shopping-bag.png">
+                        <h1>Ops!</h1>
+                        <p>Por enquanto não temos produtos no carrinho</p>
+                    </div>
+                    <ul id="fullBox--shopKart__list" class="fullBox--shopKart__list"></ul>
+                </div>
+
+                <div class="fullBox--shopKart__itemAmount hidden">
+                    <h2>Quantidade</h2>
+                    <h2 id="fullBox--shopKart__itemAmount">0</h2>
+                </div>
+                <div class="fullBox--shopKart__priceTotal hidden">
+                    <h2>Total</h2>
+                    <h2 id="fullBox--shopKart__priceTotal">R$ 00,00</h2>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
     <script src="src/script.js" type="module"></script>
 </body>
