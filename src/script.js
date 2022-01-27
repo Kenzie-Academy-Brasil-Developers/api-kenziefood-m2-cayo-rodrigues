@@ -3,6 +3,7 @@ import { CreateLayout } from "./models/vitrine.js"
 import { ProductsRouter } from "./routes/ProductsRouter.js"
 
 const cart = new CreateCart()
+const showcase = new CreateLayout()
 
 // roda assim que a página carrega
 async function starter() {
@@ -11,23 +12,26 @@ async function starter() {
     localStorage.setItem('allProducts', JSON.stringify(allProducts))
 
     // listar products na vitrine
-    const createLayout = new CreateLayout(allProducts)
-    createLayout.createEachProduct()
+
+    showcase.createEachProduct(allProducts)
 
     // identificar clicks nos products e passar pro carrinho
-    const showcase = document.querySelector('#showcase')
-    showcase.onclick = handleClickOnProduct
+    const showcaseContainer = document.querySelector('#showcase')
+    showcaseContainer.onclick = handleClickOnProduct
 
     // identificar clicks nos products dentro do carrinho
     const cartContainer = document.querySelector('#shopKart')
     cartContainer.onclick = handleClickOnCart
+
+    const filterButtons = document.querySelectorAll('.filters__button')
+    filterButtons.forEach(button => button.onclick = handleClickOnFilters)
 }
 starter()
 
 function handleClickOnProduct(event) {
     const target = event.target
 
-    if (target.tagName === 'BUTTON') {
+    if (target.classList.contains('li__button') || target.tagName === 'I') {
         const card          = target.closest('li')
         const productId     = card.id
 
@@ -49,52 +53,19 @@ function handleClickOnCart(event) {
     }
 }
 
-
-const todosButton = document.getElementById('filters__button--todos');
-todosButton.addEventListener('click', filterTodos);
-
-function filterTodos () {
+function handleClickOnFilters(event) {
+    const button        = event.currentTarget
+    const category      = button.dataset.category
     const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
-    const createLayout = new CreateLayout(allProducts)
-    createLayout.createEachProduct()
+    let filteredList    = allProducts
+
+    if (category !== 'Todos') {
+        filteredList = allProducts.filter(product => {
+            return product.categoria === category
+        })
+    }
+    showcase.createEachProduct(filteredList)
 }
-
-const panificadoraButton = document.getElementById('filters__button--panificadora');
-panificadoraButton.addEventListener('click', filterPanificadora);
-
-function filterPanificadora () {
-    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
-    const listPanificadora = allProducts.filter((product) => {
-        return product.categoria === 'Panificadora';
-    });
-    const createLayout = new CreateLayout(listPanificadora)
-    createLayout.createEachProduct()
-}
-
-const frutasButton = document.getElementById('filters__button--frutas');
-frutasButton.addEventListener('click', filterFrutas);
-
-function filterFrutas () {
-    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
-    const listFrutas = allProducts.filter((product) => {
-        return product.categoria === 'Frutas';
-    });
-    const createLayout = new CreateLayout(listFrutas)
-    createLayout.createEachProduct()
-}
-
-const bebidasButton = document.getElementById('filters__button--bebidas')
-bebidasButton.addEventListener('click', filterBebidas);
-
-function filterBebidas () {
-    const allProducts   = JSON.parse(localStorage.getItem('allProducts'))
-    const listBebidas = allProducts.filter((product) => {
-        return product.categoria === 'Bebidas';
-    });
-    const createLayout = new CreateLayout(listBebidas)
-    createLayout.createEachProduct()
-}
-
 
 const entrada = document.getElementById ('search')
 entrada.addEventListener('keyup', filterSearch);
@@ -106,12 +77,9 @@ function filterSearch() {
     let inputBuscar = entradaValue.toLowerCase();
     console.log(inputBuscar)
     const listSearch = allProducts.filter((product) => {
-        
+
         return product.categoria.toLowerCase().includes(inputBuscar) || product.nome.toLowerCase().includes(inputBuscar);
         }
     );
-    const createLayout = new CreateLayout(listSearch)
-    createLayout.createEachProduct()
+    showcase.createEachProduct(listSearch)
 }
-
-

@@ -30,6 +30,7 @@ class CreateCart {
         this.itemAmount()
         this.priceAmount()
 
+
         const image     = document.createElement('img')
         const middleCol = document.createElement('div')
         const title     = document.createElement('h2')
@@ -38,7 +39,10 @@ class CreateCart {
         const remove    = document.createElement('div')
         const item      = document.createElement('li')
         const list      = document.getElementById('fullBox--shopKart__list')
+        const cartInfo  = document.getElementById('shopKart__info')
 
+        cartInfo.innerHTML = ''
+        cartInfo.classList.remove('shopKart__info')
 
         item.setAttribute('id',currentProduct.id)
         item.setAttribute('class', 'cart__item')
@@ -50,12 +54,12 @@ class CreateCart {
         remove.setAttribute('id', 'cart__remove')
         remove.setAttribute('class','cart__remove')
 
+
         image.src          = currentProduct.imagem
         title.innerText    = currentProduct.nome
         category.innerText = currentProduct.categoria
         price.innerText    = currentProduct.preco
         remove.innerHTML   = '<i class="fas fa-trash"></i>'
-
 
         const firstChild = list.firstChild
         list.insertBefore(item, firstChild)
@@ -76,6 +80,13 @@ class CreateCart {
         this.itemAmount()
         this.priceAmount()
 
+        const cartInfo  = document.getElementById('shopKart__info')
+        const list      = document.getElementById('fullBox--shopKart__list')
+
+        if(list.childElementCount === 0){
+            cartInfo.innerHTML = "<img src='src/css/img/shopping-bag.png'><h1>Ops!</h1><p>Por enquanto não temos produtos no carrinho</p>"
+            cartInfo.classList.add('shopKart__info')
+        }
     }
 }
 

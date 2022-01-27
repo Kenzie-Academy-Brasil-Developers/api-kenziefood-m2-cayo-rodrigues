@@ -1,19 +1,18 @@
 class CreateLayout {
-    constructor(products){
-        this.products = products
+    constructor(){
         this.categories = {
             Frutas: 'src/css/img/Icon_fruits.png',
             Panificadora: 'src/css/img/Icon_bread.png',
             Bebidas: 'src/css/img/Icon_glass of wine.png'
         }
     }
-                                                            
-    createEachProduct() {
+
+    createEachProduct(products) {
         const list = document.querySelector('ul')
-        list.innerHTML = ''                                      
-                                                                       
-        for(let index = 0; index < this.products.length; index++){
-            let currentProduct = this.products[index] 
+        list.innerHTML = ''
+
+        for(let index = 0; index < products.length; index++){
+            let currentProduct = products[index]
 
             const itemBox         = document.createElement('li')
             const name            = document.createElement('h2')
@@ -30,7 +29,7 @@ class CreateLayout {
             name.innerText        = currentProduct.nome
             image.src             = currentProduct.imagem
             description.innerText = currentProduct.descricao
-            category.innerText    = currentProduct.categoria 
+            category.innerText    = currentProduct.categoria
             price.innerText       = priceProduct
             addToCart.innerHTML   = '<i class="fas fa-cart-plus"></i>'
 
@@ -45,9 +44,9 @@ class CreateLayout {
             icon.setAttribute('class','li__category--icon')
 
             list.appendChild(itemBox)
-             category.appendChild(icon)
+            category.appendChild(icon)
             itemBox.append(image,category,name,description,price,addToCart)
-           
+
         }
     }
 }
