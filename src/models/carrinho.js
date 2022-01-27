@@ -60,11 +60,12 @@ class CreateCart {
         remove.setAttribute('id', 'cart__remove')
         remove.setAttribute('class','cart__remove')
 
-
+        let priceProduct = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(currentProduct.preco)
+       
         image.src          = currentProduct.imagem
         title.innerText    = currentProduct.nome
         category.innerText = currentProduct.categoria
-        price.innerText    = currentProduct.preco
+        price.innerText    = priceProduct
         remove.innerHTML   = '<i class="fas fa-trash"></i>'
 
         const firstChild = list.firstChild
